@@ -11,7 +11,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut input_img = image::open(img_path)?;
     let detection_result = ObjectDetectorBuilder::new()
-        .max_results(2) // set max result
+        .max_results(50) // set max result
         .build_from_buffer(model_data)? // create a object detector
         .detect(&input_img)?; // do inference and generate results
 
